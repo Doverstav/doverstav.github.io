@@ -307,9 +307,9 @@ function layRoad (path, mapToUse) {
         // But roads can pass through towns (as specified in findPath and isPassable)
         if(!(mapToUse[current[0]][current[1]] instanceof village)){
             if(current[0] != past[0]){
-                mapToUse[current[0]][current[1]] = new road(current, "H");
+                mapToUse[current[0]][current[1]] = new road(current);
             } else {
-                mapToUse[current[0]][current[1]] = new road(current, "V");
+                mapToUse[current[0]][current[1]] = new road(current);
             }
         }
     }

@@ -13,10 +13,9 @@ function lair (pos) {
     this.position = pos;
 }
 
-function road (pos, alignment){
+function road (pos){
     this.info = "A road linking villages together.";
     this.position = pos;
-    this.alignment = alignment;
     this.token = "<span class=\"road\">.</span>";
     this.zoom = "&nbsp;* /.&nbsp;&nbsp;/<br>" +
                 "&nbsp;^/&nbsp;&nbsp;./<br>" +
