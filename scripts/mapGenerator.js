@@ -198,7 +198,7 @@ function placeVillages (mapToUse) {
         var adjWater = checkAdjacentTiles(currentPos[0], currentPos[1], 1, 1, water, mapToUse);
         var adjMountain = checkAdjacentTiles(currentPos[0], currentPos[1], 1, 1, mountain, mapToUse);
 
-        // For each mountain and water adjacent to pos, add one instance of it to list
+        // For each mountain and water adjacent to pos, add five instances of it to list
         for(var j = 0; j < (adjWater + adjMountain)*5; j++){
             newInstances.push(currentPos);
         }
@@ -315,6 +315,7 @@ function layRoad (path, mapToUse) {
     }
 }
 
+// TODO: Useless as problems were ish fixed in findPath?
 // Construct graph of roads, check for articulation points
 function cleanUpRoads (mapTouse){
     /*
