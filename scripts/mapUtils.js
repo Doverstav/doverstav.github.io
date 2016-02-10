@@ -36,16 +36,20 @@ function findPath (start, stop, mapToUse) {
                                             var aCoor = a[i];
                                             if(mapToUse[aCoor[0]][aCoor[1]] instanceof road || mapToUse[aCoor[0]][aCoor[1]] instanceof village){
                                                 aVal += 0.1;
-                                            } else {
+                                            } else if(mapToUse[aCoor[0]][aCoor[1]] instanceof forest) {
                                                 aVal += 1;
+                                            } else{
+                                                aVal += 10;
                                             }
                                         }
                                         for(i = 0; i < b.length; i++){
                                             var bCoor = b[i];
                                             if(mapToUse[bCoor[0]][bCoor[1]] instanceof road || mapToUse[bCoor[0]][bCoor[1]] instanceof village){
                                                 bVal += 0.1;
-                                            } else {
+                                            } else if(mapToUse[bCoor[0]][bCoor[1]] instanceof forest) {
                                                 bVal += 1;
+                                            } else{
+                                                bVal += 10;
                                             }
                                         }
                                         return aVal - bVal;}}); // ohgod so ugly
@@ -70,8 +74,7 @@ function findPath (start, stop, mapToUse) {
         // Add all adjacent nodes to paths and push them to the "prio" queue
         // Paths cannot go through moutains
         if(customIndexOf(checked, [(tx+1),ty]) == -1 &&
-                        !isOutOfBounds(tx+1, ty, mapToUse) &&
-                        isPassable(tx+1, ty, mapToUse)){
+                        !isOutOfBounds(tx+1, ty, mapToUse)){
             newPath = path.slice();
             checked.push([(tx+1),ty]); // Push node to checked so we dont use it again
             newPath.push([(tx+1),ty]);
@@ -79,8 +82,7 @@ function findPath (start, stop, mapToUse) {
         }
 
         if (customIndexOf(checked, [(tx-1),ty]) == -1 &&
-                        !isOutOfBounds(tx-1, ty, mapToUse) &&
-                        isPassable(tx-1, ty, mapToUse)) {
+                        !isOutOfBounds(tx-1, ty, mapToUse)) {
             newPath = path.slice();
             checked.push([(tx-1),ty]);
             newPath.push([(tx-1),ty]);
@@ -88,8 +90,7 @@ function findPath (start, stop, mapToUse) {
         }
 
         if (customIndexOf(checked, [tx,(ty+1)]) == -1 &&
-                        !isOutOfBounds(tx, ty+1, mapToUse) &&
-                        isPassable(tx, ty+1, mapToUse)) {
+                        !isOutOfBounds(tx, ty+1, mapToUse)) {
             newPath = path.slice();
             checked.push([tx,(ty+1)]);
             newPath.push([tx,(ty+1)]);
@@ -97,8 +98,7 @@ function findPath (start, stop, mapToUse) {
         }
 
         if (customIndexOf(checked, [tx,(ty-1)]) == -1 &&
-                        !isOutOfBounds(tx, ty-1, mapToUse) &&
-                        isPassable(tx, ty-1, mapToUse)) {
+                        !isOutOfBounds(tx, ty-1, mapToUse)) {
             newPath = path.slice();
             checked.push([tx,(ty-1)]);
             newPath.push([tx,(ty-1)]);
