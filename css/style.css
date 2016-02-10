@@ -43,6 +43,10 @@ span {
     background-color: #939393;
 }
 
+.field {
+    background-color: #ffff00;
+}
+
 .marker {
     background-color: #FFFFFF;
 }

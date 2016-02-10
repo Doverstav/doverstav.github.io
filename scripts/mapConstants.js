@@ -62,3 +62,13 @@ function castle (pos) {
                 "|_|##|_|<br>";
     this.position = pos;
 }
+
+function field (pos) {
+    this.info = "A field where the farmers grow their crops or let their cattle feed";
+    this.token = "<span class=\"field\">F</span>";
+    this.zoom = "EMPTYEMP<br>" +
+                "EMPTYEMP<br>" +
+                "EMPTYEMP<br>" +
+                "EMPTYEMP";
+    this.position = pos;
+}
