@@ -207,6 +207,7 @@ function placeVillages (mapToUse) {
 
     // Concatenate the two arrays
     var allPossible = possibleVillages.concat(newInstances);
+    allPossible.shuffle();
 
     // Place the villages
     for(i = 0; i < 10; i++){
