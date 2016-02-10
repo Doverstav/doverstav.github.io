@@ -25,10 +25,7 @@ function myKeyPress(e){
         marker[0] = marker[0] ;
         marker[1] = marker[1] + 1;
     } else if (keynum == "q"){
-        console.log(findAllInstances(map, village));
-        var coolRoad = findPath([1,1], [4,6], map);
-        layRoad(coolRoad, map);
-        printMap(map);
+        alert("Q");
     } else if (keynum == "e"){
         iterateWaterMap(map);
     }
