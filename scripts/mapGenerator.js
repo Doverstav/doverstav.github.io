@@ -218,15 +218,7 @@ function placeVillages (mapToUse) {
         if(mapToUse[vX][vY] instanceof forest &&
                 checkAdjacentTiles(vX,vY,2,2,village,mapToUse) === 0){
             mapToUse[vX][vY] = new village([vX, vY]);
-            addFields(vX,vY,1,1,mapToUse);
-            /*
-            // Experimentl, method takes double the time with this
-            // Script sometimes freezes
-            if(findPath(villageSite, castlePos, mapToUse) === null){
-                mapToUse[vX][vY] = new forest([vX,vY]);
-                i--;
-            }
-            */
+            addFields(vX,vY,1,1,mapToUse); // Place fields around village
 
         } else {
             i--;
@@ -267,7 +259,6 @@ function createPaths (mapToUse) {
         }
     }
 
-    //roadToClosestVillage(mapToUse);
 }
 
 // USELESS POS mebbe throw away?
@@ -297,7 +288,7 @@ function roadToClosestVillage (mapToUse) {
     }
 }
 
-// Connects two endpoints on a path by lay road.
+// Connects two endpoints on a path by laying road.
 // Endpoints are not paved.
 // TODO: Road cleanup: check all road, determine if they are superfluous, if so remove it
 function layRoad (path, mapToUse) {
@@ -315,21 +306,6 @@ function layRoad (path, mapToUse) {
             }
         }
     }
-}
-
-// TODO: Useless as problems were ish fixed in findPath?
-// Construct graph of roads, check for articulation points
-function cleanUpRoads (mapTouse){
-    /*
-    ALGO:
-    DFS from castle on villages and roads.
-    Remove all non-articulation points from resulting trees
-    EXCEPTION: Root (castle) is never articulation point
-    END
-
-    As only articulation points remain, all roads
-    */
-
 }
 
 // Adds fields around specified position with range scopeX and scopeY
