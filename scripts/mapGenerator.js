@@ -218,8 +218,11 @@ function placeVillages (mapToUse) {
         // Only place village if tile is empty and no villages in 2 tile radius
         if(mapToUse[vX][vY] instanceof forest &&
                 checkAdjacentTiles(vX,vY,2,2,village,mapToUse) === 0){
-            mapToUse[vX][vY] = new village([vX, vY]);
             addFields(vX,vY,1,1,mapToUse); // Place fields around village
+            adjWater = checkAdjacentTiles(currentPos[0], currentPos[1], 1, 1, water, mapToUse);
+            adjMountain = checkAdjacentTiles(currentPos[0], currentPos[1], 1, 1, mountain, mapToUse);
+            var adjFields = checkAdjacentTiles(currentPos[0], currentPos[1], 1, 1, field, mapToUse);
+            mapToUse[vX][vY] = new village([vX, vY], adjWater, adjMountain, adjFields);
 
         } else {
             i--;

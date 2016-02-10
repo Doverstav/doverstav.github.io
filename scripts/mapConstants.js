@@ -1,4 +1,4 @@
-function village (pos) {
+function village (pos, adjWater, adjMountain,adjFields) {
     this.token = "<span class=\"village\" id=\"" + pos + "\">V</span>";
     this.info = "A small village, mostly farmers live here.";
     this.zoom = "_/^\\_ <br>" +
@@ -6,6 +6,9 @@ function village (pos) {
                 "|_*__*_|<br>" +
                 "|_#__#_|<br>";
     this.position = pos;
+    this.adjWater = adjWater;
+    this.adjMountain = adjMountain;
+    this.adjFields = adjFields;
 }
 function lair (pos) {
     this.token = "L";
