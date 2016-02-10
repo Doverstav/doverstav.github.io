@@ -261,33 +261,6 @@ function createPaths (mapToUse) {
 
 }
 
-// USELESS POS mebbe throw away?
-function roadToClosestVillage (mapToUse) {
-    var villagePos = findAllInstances(mapToUse, village);
-    var paths = [];
-
-    // Find pairs
-    for(var i = 0; i < villagePos.length; i++){
-        var shortestPath;
-        for(var j = 0; j < villagePos.length; j++){
-            var newPath = findPath(villagePos[i], villagePos[j], mapToUse);
-            if(i != j){
-                if (typeof shortestPath === "undefined") {
-                    console.log("UNDEFINED!");
-                    shortestPath = newPath;
-                } else if (shortestPath.length > newPath.length){
-                    shortestPath = newPath;
-                }
-            }
-        }
-        paths.push(shortestPath);
-    }
-
-    for(i = 0; i < paths.length; i++){
-        layRoad(paths[i], mapToUse);
-    }
-}
-
 // Connects two endpoints on a path by laying road.
 // Endpoints are not paved.
 // TODO: Road cleanup: check all road, determine if they are superfluous, if so remove it
