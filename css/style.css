@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+}
+
+div {
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    border-style: dashed;
+    border-width: 2px;
+    /*font-family: "Lucida Console", Monaco, monospace;*/
+    font-family: "Courier New", Courier, monospace;
+}
+
+span {
+    padding: 2px;
+}
+
+.forest {
+    /*color: #336600;*/
+    background-color: #009933;
+}
+
+.mountain {
+    /*color: #CC0000;*/
+    background-color: #CC0000;
+}
+
+.water {
+    /*color: #0033CC;*/
+    background-color: #0000CC;
+}
+
+.village {
+    background-color: #8A5C2E;
+}
+
+.castle {
+    background-color: #FFD24A;
+}
+
+.road {
+    background-color: #939393;
+}
+
+.marker {
+    background-color: #FFFFFF;
+}

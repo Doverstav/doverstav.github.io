@@ -1,0 +1,65 @@
+function village (pos) {
+    this.token = "<span class=\"village\">V</span>";
+    this.info = "A small village, mostly farmers live here.";
+    this.zoom = "_/^\\_ <br>" +
+                "|_*_|__<br>" +
+                "|_*__*_|<br>" +
+                "|_#__#_|<br>";
+    this.position = pos;
+}
+function lair (pos) {
+    this.token = "L";
+    this.info = "Your lair. This is where you plan raids and store your treaure.";
+    this.position = pos;
+}
+
+function road (pos, alignment){
+    this.info = "A road linking villages together.";
+    this.position = pos;
+    this.alignment = alignment;
+    this.token = "<span class=\"road\">.</span>";
+    this.zoom = "&nbsp;* /.&nbsp;&nbsp;/<br>" +
+                "&nbsp;^/&nbsp;&nbsp;./<br>" +
+                "*/&nbsp;&nbsp;&nbsp;/<br>" +
+                "/.&nbsp;&nbsp;/ &nbsp;^<br>";
+}
+
+function water (pos){
+    this.info = "A body of water. It's wet.";
+    this.position = pos;
+    this.zoom = "&nbsp;___&nbsp;&nbsp;<br>" +
+                "/ ~ \\__<br>" +
+                "\\ ~  ~ &nbsp;\\<br>" +
+                "/__~___/<br>";
+    this.token = "<span class=\"water\">W</span>";
+}
+
+function forest (pos) {
+    this.info = "Just a bunch of trees and rocks, nothing of real interest.";
+    this.token = "<span class=\"forest\">*</span>";
+    this.zoom = "/^|^\\<br>" +
+                "\\^|^/<br>" +
+                "&nbsp;(|) &nbsp;_<br>" +
+                "__|__/_\\<br>";
+    this.position = pos;
+}
+
+function mountain (pos) {
+    this.info = "A large, impassable mountain.";
+    this.token = "<span class=\"mountain\">M</span>";
+    this.zoom = "&nbsp;&nbsp;&nbsp;&nbsp;_<br>" +
+                "&nbsp;&nbsp;&nbsp;/ |<br>" +
+                "&nbsp;_/ \\-\\<br>" +
+                "/ \\ /| |<br>";
+    this.position = pos;
+}
+
+function castle (pos) {
+    this.info = "A big stone castle. This is where the king and his knights reside.";
+    this.token = "<span class=\"castle\">C</span>";
+    this.zoom = "/^\\&nbsp;&nbsp;/^\\<br>" +
+                "|*|__|*|<br>" +
+                "|*|..|*|<br>" +
+                "|_|##|_|<br>";
+    this.position = pos;
+}
