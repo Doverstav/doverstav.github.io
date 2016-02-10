@@ -217,6 +217,7 @@ function placeVillages (mapToUse) {
         if(mapToUse[vX][vY] instanceof forest &&
                 checkAdjacentTiles(vX,vY,2,2,village,mapToUse) === 0){
             mapToUse[vX][vY] = new village([vX, vY]);
+            addFields(vX,vY,1,1,mapToUse);
             /*
             // Experimentl, method takes double the time with this
             // Script sometimes freezes
@@ -328,4 +329,26 @@ function cleanUpRoads (mapTouse){
     As only articulation points remain, all roads
     */
 
+}
+
+// Adds fields around specified position with range scopeX and scopeY
+function addFields(x, y, scopeX, scopeY, mapToUse){
+    var startX = x - scopeX;
+    var startY = y - scopeY;
+    var endX = x + scopeX;
+    var endY = y + scopeY;
+
+    var instanceCounter = 0;
+    for(var iY = startY; iY <= endY; iY++){
+        for(var iX = startX; iX <= endX; iX++){
+            if(!(iX == x && iY == y)){
+                if(!(isOutOfBounds(iX, iY, mapToUse)) &&
+                    mapToUse[iX][iY] instanceof forest){
+                        mapToUse[iX][iY] = new field([iX, iY]);
+                    }
+            }
+        }
+    }
+
+    return instanceCounter;
 }
