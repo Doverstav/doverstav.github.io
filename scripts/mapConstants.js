@@ -1,5 +1,5 @@
 function village (pos) {
-    this.token = "<span class=\"village\">V</span>";
+    this.token = "<span class=\"village\" id=\"" + pos + "\">V</span>";
     this.info = "A small village, mostly farmers live here.";
     this.zoom = "_/^\\_ <br>" +
                 "|_*_|__<br>" +
@@ -16,7 +16,7 @@ function lair (pos) {
 function road (pos){
     this.info = "A road linking villages together.";
     this.position = pos;
-    this.token = "<span class=\"road\">.</span>";
+    this.token = "<span class=\"road\" id=\"" + pos + "\">.</span>";
     this.zoom = "&nbsp;* /.&nbsp;&nbsp;/<br>" +
                 "&nbsp;^/&nbsp;&nbsp;./<br>" +
                 "*/&nbsp;&nbsp;&nbsp;/<br>" +
@@ -30,12 +30,12 @@ function water (pos){
                 "/ ~ \\__<br>" +
                 "\\ ~  ~ &nbsp;\\<br>" +
                 "/__~___/<br>";
-    this.token = "<span class=\"water\">W</span>";
+    this.token = "<span class=\"water\" id=\"" + pos + "\">W</span>";
 }
 
 function forest (pos) {
     this.info = "Just a bunch of trees and rocks, nothing of real interest.";
-    this.token = "<span class=\"forest\">*</span>";
+    this.token = "<span class=\"forest\" id=\"" + pos + "\">*</span>";
     this.zoom = "/^|^\\<br>" +
                 "\\^|^/<br>" +
                 "&nbsp;(|) &nbsp;_<br>" +
@@ -45,7 +45,7 @@ function forest (pos) {
 
 function mountain (pos) {
     this.info = "A large, impassable mountain.";
-    this.token = "<span class=\"mountain\">M</span>";
+    this.token = "<span class=\"mountain\" id=\"" + pos + "\">M</span>";
     this.zoom = "&nbsp;&nbsp;&nbsp;&nbsp;_<br>" +
                 "&nbsp;&nbsp;&nbsp;/ |<br>" +
                 "&nbsp;_/ \\-\\<br>" +
@@ -55,7 +55,7 @@ function mountain (pos) {
 
 function castle (pos) {
     this.info = "A big stone castle. This is where the king and his knights reside.";
-    this.token = "<span class=\"castle\">C</span>";
+    this.token = "<span class=\"castle\" id=\"" + pos + "\">C</span>";
     this.zoom = "/^\\&nbsp;&nbsp;/^\\<br>" +
                 "|*|__|*|<br>" +
                 "|*|..|*|<br>" +
@@ -65,7 +65,7 @@ function castle (pos) {
 
 function field (pos) {
     this.info = "A field where the farmers grow their crops or let their cattle feed";
-    this.token = "<span class=\"field\">F</span>";
+    this.token = "<span class=\"field\" id=\"" + pos + "\">F</span>";
     this.zoom = "EMPTYEMP<br>" +
                 "EMPTYEMP<br>" +
                 "EMPTYEMP<br>" +
