@@ -124,7 +124,7 @@ function checkAdjacentTiles(x, y, scopeX, scopeY, instance, mapToUse){
                 if(isOutOfBounds(iX, iY, mapToUse) ||
                     mapToUse[iX][iY] instanceof instance){
                         instanceCounter++;
-                    }
+                }
             }
         }
     }

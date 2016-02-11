@@ -45,7 +45,9 @@ function updateInfoPanel(mapToUse, markerToUse){
     var selected = mapToUse[markerToUse[0]][markerToUse[1]];
     var infoText = "";
 
-    infoText = selected.info + "<br>X: " + markerToUse[0] + " Y: " + markerToUse[1];
+    infoText = selected.info + "<br>X: " + markerToUse[0] + " Y: " + markerToUse[1] + "<br>" +
+                "Wealth: " + selected.wealth + "<br>" +
+                "Population: " + selected.population;
 
     document.getElementById("infoDiv").innerHTML = infoText;
 }

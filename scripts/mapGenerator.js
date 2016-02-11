@@ -215,13 +215,16 @@ function placeVillages (mapToUse) {
         var villageSite = allPossible[index];
         var vX = villageSite[0];
         var vY = villageSite[1];
+        var adjWater = 0;
+        var adjMountain = 0;
+        var adjFields = 0;
         // Only place village if tile is empty and no villages in 2 tile radius
         if(mapToUse[vX][vY] instanceof forest &&
                 checkAdjacentTiles(vX,vY,2,2,village,mapToUse) === 0){
-            addFields(vX,vY,1,1,mapToUse); // Place fields around village
-            adjWater = checkAdjacentTiles(currentPos[0], currentPos[1], 1, 1, water, mapToUse);
-            adjMountain = checkAdjacentTiles(currentPos[0], currentPos[1], 1, 1, mountain, mapToUse);
-            var adjFields = checkAdjacentTiles(currentPos[0], currentPos[1], 1, 1, field, mapToUse);
+            adjFields = addFields(vX,vY,1,1,mapToUse); // Place fields around village
+            adjWater = checkAdjacentTiles(vX, vY, 1, 1, water, mapToUse);
+            adjMountain = checkAdjacentTiles(vX, vY, 1, 1, mountain, mapToUse);
+            //adjFields = checkAdjacentTiles(vX, vY, 1, 1, field, mapToUse);
             mapToUse[vX][vY] = new village([vX, vY], adjWater, adjMountain, adjFields);
 
         } else {
@@ -299,6 +302,7 @@ function addFields(x, y, scopeX, scopeY, mapToUse){
                 if(!(isOutOfBounds(iX, iY, mapToUse)) &&
                     mapToUse[iX][iY] instanceof forest){
                         mapToUse[iX][iY] = new field([iX, iY]);
+                        instanceCounter++;
                     }
             }
         }

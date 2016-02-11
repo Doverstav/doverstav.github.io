@@ -9,6 +9,12 @@ function village (pos, adjWater, adjMountain,adjFields) {
     this.adjWater = adjWater;
     this.adjMountain = adjMountain;
     this.adjFields = adjFields;
+    console.log("Pos: " + pos);
+    console.log("water: " + adjWater);
+    console.log("mountain: " + adjMountain);
+    console.log("adjFields: " + adjFields);
+    this.wealth = adjWater*2 + adjMountain*3 + adjFields*1;
+    this.population = this.wealth*5;
 }
 function lair (pos) {
     this.token = "L";
@@ -72,6 +78,6 @@ function field (pos) {
     this.zoom = "EMPTYEMP<br>" +
                 "EMPTYEMP<br>" +
                 "EMPTYEMP<br>" +
-                "EMPTYEMP";
+                "EMPTYEMP<br>";
     this.position = pos;
 }
