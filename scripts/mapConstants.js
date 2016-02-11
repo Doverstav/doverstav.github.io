@@ -9,10 +9,6 @@ function village (pos, adjWater, adjMountain,adjFields) {
     this.adjWater = adjWater;
     this.adjMountain = adjMountain;
     this.adjFields = adjFields;
-    console.log("Pos: " + pos);
-    console.log("water: " + adjWater);
-    console.log("mountain: " + adjMountain);
-    console.log("adjFields: " + adjFields);
     this.wealth = adjWater*2 + adjMountain*3 + adjFields*1;
     this.population = this.wealth*5;
 }
