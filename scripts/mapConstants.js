@@ -9,8 +9,10 @@ function village (pos, adjWater, adjMountain,adjFields) {
     this.adjWater = adjWater;
     this.adjMountain = adjMountain;
     this.adjFields = adjFields;
+    this.distToCastle = 0;
     this.wealth = adjWater*2 + adjMountain*3 + adjFields*1;
     this.population = this.wealth*5;
+
 }
 function lair (pos) {
     this.token = "L";
