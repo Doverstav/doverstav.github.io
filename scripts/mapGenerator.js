@@ -34,6 +34,8 @@ function mapGen (height, width){
     var d7 = new Date();
     var t7 = d7.getTime();
 
+    setCastleVars(newMap);
+
     console.log("Time for filling: " + (t2-t1));
     console.log("Time for laking: " + (t3-t2));
     console.log("Time for mountaning: " + (t4-t3));
@@ -246,6 +248,23 @@ function placeCastle (mapToUse) {
             castlePlaced = true;
         }
     }
+}
+
+// Run after createPaths, as the vars of castle are calculated from all village variables
+function setCastleVars (mapToUse) {
+    var castlePos = findAllInstances(mapToUse, castle).pop();
+    var villagesPos = findAllInstances(mapToUse, village);
+
+    var combinedWealth = 0;
+    var combinedPop = 0;
+    for(var i = 0; i < villagesPos.length; i++){
+        combinedWealth += mapToUse[villagesPos[i][0]][villagesPos[i][1]].wealth;
+        combinedPop += mapToUse[villagesPos[i][0]][villagesPos[i][1]].population;
+    }
+
+    mapToUse[castlePos[0]][castlePos[1]].setWealth(Math.round(combinedWealth*0.5));
+    mapToUse[castlePos[0]][castlePos[1]].setPopulation(Math.round(combinedPop*0.5));
+
 }
 
 function createPaths (mapToUse) {
