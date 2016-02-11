@@ -47,7 +47,7 @@ function updateInfoPanel(mapToUse, markerToUse){
 
     infoText = selected.info + "<br>X: " + markerToUse[0] + " Y: " + markerToUse[1] + "<br>" +
                 "Wealth: " + selected.wealth + "<br>" +
-                "Population: " + selected.population + "<br> +" +
+                "Population: " + selected.population + "<br>" +
                 "Distance to castle:" + selected.distToCastle + "<br>";
 
     document.getElementById("infoDiv").innerHTML = infoText;
