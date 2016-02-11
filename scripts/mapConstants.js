@@ -13,7 +13,12 @@ function village (pos, adjWater, adjMountain,adjFields) {
     this.wealth = adjWater*2 + adjMountain*3 + adjFields*1;
     this.population = this.wealth*5;
 
+    this.setDistToCastle = function(dist){
+        this.distToCastle = dist;
+    }
+
 }
+
 function lair (pos) {
     this.token = "L";
     this.info = "Your lair. This is where you plan raids and store your treaure.";

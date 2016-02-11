@@ -263,6 +263,7 @@ function createPaths (mapToUse) {
         path = findPath(castlePos, villagesPos[i], mapToUse);
         if(path !== null){ // Dont pave if no path
             layRoad(path, mapToUse);
+            mapToUse[villagesPos[i][0]][villagesPos[i][1]].setDistToCastle(path.length);
         }
     }
 
