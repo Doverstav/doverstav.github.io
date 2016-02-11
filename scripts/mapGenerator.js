@@ -1,3 +1,4 @@
+var oldMarker = [0,0];
 var marker = [0,0];
 var map;
 

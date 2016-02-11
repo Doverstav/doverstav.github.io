@@ -10,6 +10,8 @@ function myKeyPress(e){
 
     keynum = (String.fromCharCode(keynum).toLowerCase());
 
+    oldMarker = marker.slice();
+
     if(keynum == "w" && !isOutOfBounds(marker[0] - 1, marker[1], map)){
         marker[0] = marker[0] - 1;
         marker[1] = marker[1];
@@ -35,20 +37,9 @@ function myKeyPress(e){
 }
 
 function updateMap(mapToUpdate){
-    var height = mapToUpdate.length;
-    var width = mapToUpdate[0].length;
-    var mapStringified = "";
-    for(var i = 0; i < height; i++){
-        for(var j = 0; j < width; j++){
-            if(i == marker[0] && j == marker[1]){ // Paint marker
-                mapStringified = mapStringified.concat("<span class=\"marker\">X</span>");
-            } else {
-                mapStringified = mapStringified.concat(mapToUpdate[i][j].token);
-            }
-        }
-        mapStringified = mapStringified.concat("<br>");
-    }
-    document.getElementById("mapDiv").innerHTML = mapStringified;
+    document.getElementById(oldMarker).outerHTML = mapToUpdate[oldMarker[0]][oldMarker[1]].token;
+    document.getElementById(marker).outerHTML = "<span class=\"marker\" id=\""+marker+"\">X</span>"; // Set marker
+
     updateInfoPanel(mapToUpdate, marker);
     updateZoomPanel(mapToUpdate, marker);
 }
@@ -75,7 +66,7 @@ function printMap(mapToPrint) {
     var mapStringified = "";
     for(var i = 0; i < height; i++){
         for(var j = 0; j < width; j++){
-            mapStringified = mapStringified.concat(mapToPrint[i][j]);
+            mapStringified = mapStringified.concat(mapToPrint[i][j].token);
         }
         mapStringified = mapStringified.concat("<br>");
     }
