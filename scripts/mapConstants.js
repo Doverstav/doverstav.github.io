@@ -84,6 +84,15 @@ function castle (pos) {
                 "|*|..|*|<br>" +
                 "|_|##|_|<br>";
     this.position = pos;
+    this.wealth = 0;
+
+    this.setWealth = function (wealth) {
+        this.wealth = wealth;
+    }
+
+    this.setPopulation = function (wealth) {
+        this.population = wealth;
+    }
 }
 
 function field (pos) {
