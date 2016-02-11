@@ -10,11 +10,22 @@ function village (pos, adjWater, adjMountain,adjFields) {
     this.adjMountain = adjMountain;
     this.adjFields = adjFields;
     this.distToCastle = 0;
-    this.wealth = adjWater*2 + adjMountain*3 + adjFields*1;
-    this.population = this.wealth*5;
+    this.wealth = 0;
+    this.population = 0;
 
     this.setDistToCastle = function(dist){
         this.distToCastle = dist;
+        this.calculateWealth();
+        this.calculatePopulation();
+    }
+
+    this.calculateWealth = function () {
+        this.wealth = Math.round((adjWater*2 + adjMountain*3 + adjFields*1)
+                                    *(1 - this.distToCastle/100));
+    }
+
+    this.calculatePopulation = function () {
+        this.population = Math.round(this.wealth*10*(1 - this.distToCastle/100));
     }
 
 }
