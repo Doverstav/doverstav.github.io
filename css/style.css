@@ -36,7 +36,9 @@ span {
 }
 
 .castle {
-    background-color: #FFD24A;
+    /*background-color: #FFD24A;*/
+    background-color: #000000;
+    color: #FFFFFF;
 }
 
 .road {
