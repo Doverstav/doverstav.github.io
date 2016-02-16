@@ -25,7 +25,7 @@ function myKeyPress(e){
         marker[0] = marker[0] ;
         marker[1] = marker[1] + 1;
     } else if (keynum == "q"){
-        alert("Q");
+        gameLoop(map);
     } else if (keynum == "e"){
         iterateWaterMap(map);
     }
