@@ -14,7 +14,7 @@ function village (pos, adjWater, adjMountain,adjFields) {
     this.population = 0;
     this.maxPop = 0;
     this.growthRate = 0;
-    this.baseGrowth = 0.25;
+    this.baseGrowth = 0.10; // Subject to tweaking
 
     this.setDistToCastle = function(dist){
         this.distToCastle = dist;
@@ -42,7 +42,7 @@ function village (pos, adjWater, adjMountain,adjFields) {
     };
 
     this.setPopulation = function(newPop) {
-        this.poulation = newPop;
+        this.population = newPop;
     };
 
 }
