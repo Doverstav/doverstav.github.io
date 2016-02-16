@@ -6,7 +6,15 @@
 var villageInstances = [];
 
 function getVillageInstances (mapToUse) {
-    villageInstances = findAllInstances(mapToUse,village);
+    // Doesnt actually get instances, only positions
+    var villagePositions = findAllInstances(mapToUse,village);
+
+    for(var i = 0; i < villagePositions.length; i++){
+        villageInstances[i] = mapToUse[villagePositions[i][0]][villagePositions[i][1]];
+    }
+
+    console.log(villageInstances);
+
 }
 
 function gameLoop (mapToUse) {
@@ -19,7 +27,7 @@ function updateVillagePopulations () {
         var gR = villageInstances[i].growthRate;
         var maxPop = villageInstances[i].maxPop;
         var deltaPop = logGrowth(gR, curPop, maxPop);
-        villageInstances[i].setPopulation((curPop + deltaPop));
+        villageInstances[i].setPopulation(Math.round(curPop + deltaPop));
     }
 }
 
