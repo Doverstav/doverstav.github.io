@@ -12,11 +12,15 @@ function village (pos, adjWater, adjMountain,adjFields) {
     this.distToCastle = 0;
     this.wealth = 0;
     this.population = 0;
+    this.maxPop = 0;
+    this.growthRate = 0;
 
     this.setDistToCastle = function(dist){
         this.distToCastle = dist;
         this.calculateWealth();
         this.calculatePopulation();
+        this.setMaxPop();
+        this.setGrowthRate();
     };
 
     this.calculateWealth = function () {
@@ -26,6 +30,14 @@ function village (pos, adjWater, adjMountain,adjFields) {
 
     this.calculatePopulation = function () {
         this.population = Math.round(this.wealth*10*(1 - this.distToCastle/100));
+    };
+
+    this.setMaxPop = function () {
+        // Not implemented
+    };
+
+    this.setGrowthRate = function () {
+        // Not implemented
     };
 
 }
