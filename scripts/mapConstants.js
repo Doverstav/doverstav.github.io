@@ -41,6 +41,10 @@ function village (pos, adjWater, adjMountain,adjFields) {
         this.growthRate = (this.baseGrowth + (this.wealth/100))*(1 - this.distToCastle/100);
     };
 
+    this.setPopulation = function(newPop) {
+        this.poulation = newPop;
+    };
+
 }
 
 function lair (pos) {
