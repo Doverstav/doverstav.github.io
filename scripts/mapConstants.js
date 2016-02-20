@@ -102,6 +102,16 @@ function castle (pos) {
                 "|_|##|_|<br>";
     this.position = pos;
     this.wealth = 0;
+    this.maxPop = 0;
+    this.growthRate = 0;
+    this.baseGrowth = 0.15; // Subject to tweaking
+
+    this.initCastle = function(wealth, population) {
+        this.setWealth(wealth);
+        this.setPopulation(population);
+        this.setMaxPop();
+        this.setGrowthRate();
+    }
 
     this.setWealth = function (wealth) {
         this.wealth = wealth;
@@ -109,6 +119,18 @@ function castle (pos) {
 
     this.setPopulation = function (population) {
         this.population = population;
+    };
+
+    this.setMaxPop = function () { // MaxPop = startingPop*10
+        this.maxPop = Math.round(this.wealth*100;
+    };
+
+    this.setGrowthRate = function () {
+        this.growthRate = (this.baseGrowth + (this.wealth/100));
+    };
+
+    this.setPopulation = function(newPop) {
+        this.population = newPop;
     };
 }
 
