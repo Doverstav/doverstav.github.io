@@ -4,6 +4,7 @@
 // K = Max allowed population
 
 var villageInstances = [];
+var castleInstances = [];
 
 function getVillageInstances (mapToUse) {
     // Doesnt actually get instances, only positions
@@ -13,8 +14,15 @@ function getVillageInstances (mapToUse) {
         villageInstances[i] = mapToUse[villagePositions[i][0]][villagePositions[i][1]];
     }
 
-    console.log(villageInstances);
+}
 
+function getCastleInstances (mapToUse) {
+    // Doesnt actually get instances, only positions
+    var castlePositions = findAllInstances(mapToUse,castle);
+
+    for(var i = 0; i < castlePositions.length; i++){
+        castleInstances[i] = mapToUse[castlePositions[i][0]][castlePositions[i][1]];
+    }
 }
 
 function gameLoop (mapToUse) {
