@@ -13,7 +13,6 @@ function getVillageInstances (mapToUse) {
     for(var i = 0; i < villagePositions.length; i++){
         villageInstances[i] = mapToUse[villagePositions[i][0]][villagePositions[i][1]];
     }
-
 }
 
 function getCastleInstances (mapToUse) {
@@ -36,6 +35,16 @@ function updateVillagePopulations () {
         var maxPop = villageInstances[i].maxPop;
         var deltaPop = logGrowth(gR, curPop, maxPop);
         villageInstances[i].setPopulation(Math.round(curPop + deltaPop));
+    }
+}
+
+function updateCastlePopulations () {
+    for(var i = 0; i < castleInstances.length; i++){
+        var curPop = castleInstances[i].population:
+        var gR = castleInstances[i].growthRate;
+        var maxPop = castleInstances[i].maxPop;
+        var deltaPop = logGrowthgr, curPop, maxPop);
+        castleInstances[i].setPopulation(Math.round(curPop + deltaPop));
     }
 }
 
