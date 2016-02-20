@@ -40,10 +40,10 @@ function updateVillagePopulations () {
 
 function updateCastlePopulations () {
     for(var i = 0; i < castleInstances.length; i++){
-        var curPop = castleInstances[i].population:
+        var curPop = castleInstances[i].population;
         var gR = castleInstances[i].growthRate;
         var maxPop = castleInstances[i].maxPop;
-        var deltaPop = logGrowthgr, curPop, maxPop);
+        var deltaPop = logGrowth(gr, curPop, maxPop);
         castleInstances[i].setPopulation(Math.round(curPop + deltaPop));
     }
 }
