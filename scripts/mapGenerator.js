@@ -263,8 +263,10 @@ function setCastleVars (mapToUse) {
         combinedPop += mapToUse[villagesPos[i][0]][villagesPos[i][1]].population;
     }
 
-    mapToUse[castlePos[0]][castlePos[1]].setWealth(Math.round(combinedWealth*0.5));
-    mapToUse[castlePos[0]][castlePos[1]].setPopulation(Math.round(combinedPop*0.5));
+    castleWealth = Math.round(combinedWealth*0.5);
+    castlePop = Math.round(combinedPop*0.5);
+
+    mapToUse[castlePos[0]][castlePos[1]].initCastle(castleWealth, castlePop);
 
 }
 
