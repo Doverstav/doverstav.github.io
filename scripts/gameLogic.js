@@ -6,6 +6,7 @@
 var villageInstances = [];
 var castleInstances = [];
 
+// TODO Combine with function below
 function getVillageInstances (mapToUse) {
     // Doesnt actually get instances, only positions
     var villagePositions = findAllInstances(mapToUse,village);
@@ -15,6 +16,7 @@ function getVillageInstances (mapToUse) {
     }
 }
 
+// TODO Combine with function above
 function getCastleInstances (mapToUse) {
     // Doesnt actually get instances, only positions
     var castlePositions = findAllInstances(mapToUse,castle);
@@ -29,6 +31,7 @@ function gameLoop (mapToUse) {
     updateCastlePopulations();
 }
 
+// TODO COmbine with function below
 function updateVillagePopulations () {
     for(var i = 0; i < villageInstances.length; i++){
         var curPop = villageInstances[i].population;
@@ -39,6 +42,7 @@ function updateVillagePopulations () {
     }
 }
 
+// TODO Combine with function above
 function updateCastlePopulations () {
     for(var i = 0; i < castleInstances.length; i++){
         var curPop = castleInstances[i].population;
