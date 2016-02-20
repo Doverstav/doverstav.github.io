@@ -26,6 +26,7 @@ function getCastleInstances (mapToUse) {
 
 function gameLoop (mapToUse) {
     updateVillagePopulations();
+    updateCastlePopulations();
 }
 
 function updateVillagePopulations () {
@@ -43,7 +44,7 @@ function updateCastlePopulations () {
         var curPop = castleInstances[i].population;
         var gR = castleInstances[i].growthRate;
         var maxPop = castleInstances[i].maxPop;
-        var deltaPop = logGrowth(gr, curPop, maxPop);
+        var deltaPop = logGrowth(gR, curPop, maxPop);
         castleInstances[i].setPopulation(Math.round(curPop + deltaPop));
     }
 }
