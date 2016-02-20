@@ -122,7 +122,7 @@ function castle (pos) {
     };
 
     this.setMaxPop = function () { // MaxPop = startingPop*10
-        this.maxPop = Math.round(this.wealth*100;
+        this.maxPop = Math.round(this.wealth*100);
     };
 
     this.setGrowthRate = function () {
