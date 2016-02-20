@@ -36,6 +36,7 @@ function mapGen (height, width){
 
     setCastleVars(newMap);
     getVillageInstances(newMap);
+    getCastleInstances(newMap);
 
     console.log("Time for filling: " + (t2-t1));
     console.log("Time for laking: " + (t3-t2));
